@@ -10,7 +10,6 @@ def college_list(request):
         serializer = CollegeSerializer(colleges, many=True)
         return JsonResponse(serializer.data, safe=False)
     elif request.method == 'POST':
-        #data = JSONParser().parse(request)
         serializer = CollegeSerializer(data=request.POST)
         if serializer.is_valid():
             serializer.save()

@@ -47,7 +47,7 @@ class PersistentNotificationSerializer(serializers.ModelSerializer):
         extra_kwargs = {'NotificationID':{'read_only':True},'NotificationText':{'read_only':False},
                         'Priority':{'read_only':False}}
  		
-class UserNotification(serializers.ModelSerializer):
+class UserNotificationSerializer(serializers.ModelSerializer):
     UserToNotify = PlayerSerializer(read_only=True)
     class Meta:
         model=UserNotification

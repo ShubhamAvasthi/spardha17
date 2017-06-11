@@ -7,7 +7,7 @@ from rest_serv.serializers import PersistentNotificationSerializer
 from django.views.decorators.http import require_GET
 
 @require_GET
-def persistent_notification_list(request):
+def PersistentNotificationList(request):
     if request.method == 'GET':
         persistent_notifications = PersistentNotification.objects.all()
         serializer = PersistentNotificationSerializer(persistent_notifications, many=True)

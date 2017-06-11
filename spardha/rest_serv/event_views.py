@@ -7,7 +7,7 @@ from rest_serv.serializers import EventSerializer
 from django.views.decorators.http import require_GET
 
 @require_GET	
-def event_view(request):
+def EventView(request):
     events = Event.objects.all()
     serializer = EventSerializer(events, many=True)
     return JsonResponse(serializer.data, safe=False)
